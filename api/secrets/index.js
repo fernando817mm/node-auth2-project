@@ -7,5 +7,6 @@
   developers cloning this repo won't be able to run the project as is.
  */
 module.exports = {
-
-}
+  JWT_SECRET: process.env.JWT_SECRET || "fallback secret",
+  BCRYPT_NUM: process.BCRYPT_NUM || 8,
+};
