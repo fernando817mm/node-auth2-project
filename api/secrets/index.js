@@ -8,5 +8,5 @@
  */
 module.exports = {
   JWT_SECRET: process.env.JWT_SECRET || "fallback secret",
-  BCRYPT_NUM: process.BCRYPT_NUM || 8,
+  BCRYPT_NUM: process.env.BCRYPT_NUM || 8,
 };

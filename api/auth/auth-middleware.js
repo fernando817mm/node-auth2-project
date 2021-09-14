@@ -1,13 +1,13 @@
 const { JWT_SECRET } = require("../secrets"); // use this secret!
 const jwt = require("jsonwebtoken");
-const { findBy } = require("./../../data/db-config");
+const { findBy } = require("./../users/users-model");
 
 const restricted = (req, res, next) => {
   const token = req.headers.authorization;
   if (token) {
     jwt.verify(token, JWT_SECRET, (err, decode) => {
       if (err) {
-        next({ status: 401, message: "Token invalid", stack: err.message });
+        next({ status: 401, message: "Token invalid" });
       } else {
         req.decodedJWT = decode;
         next();
